@@ -25,7 +25,7 @@ module GoogleTimezone
 
     def fetch
       location = [@lat, @lon].join(',')
-      params = { location: location, timestamp: Time.now.to_i }.merge(@options)
+      params = { :location => location, :timestamp => Time.now.to_i }.merge(@options)
       result = get_result(params)
       Result.new(result)
     end
